@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bangs Glow Salon</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#5b3f43",
+                        "secondary-fixed": "#ffd6fe",
+                        "surface-variant": "#e4e2e0",
+                        "on-secondary-fixed": "#35003f",
+                        "tertiary-fixed": "#ffe16d",
+                        "surface-container-high": "#eae8e6",
+                        "on-primary-container": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f5f3f1",
+                        "primary-fixed-dim": "#ffb2be",
+                        "surface-tint": "#bc004b",
+                        "surface-bright": "#fbf9f7",
+                        "background": "#fbf9f7",
+                        "surface-container-highest": "#e4e2e0",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "cream-surface": "#FDFBF9",
+                        "on-tertiary-fixed": "#221b00",
+                        "primary": "#b80049",
+                        "surface-dim": "#dbdad8",
+                        "outline-variant": "#e4bdc2",
+                        "secondary": "#9a25ae",
+                        "inverse-primary": "#ffb2be",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#f9abff",
+                        "deep-onyx": "#1A1A1A",
+                        "primary-fixed": "#ffd9de",
+                        "on-secondary-fixed-variant": "#7b008f",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "secondary-container": "#ed76fd",
+                        "outline": "#8f6f73",
+                        "inverse-surface": "#30302f",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#4c3f00",
+                        "on-background": "#1b1c1b",
+                        "tertiary": "#705d00",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "peach-warmth": "#FFCCBC",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#400014",
+                        "on-primary-fixed-variant": "#900038",
+                        "surface-container": "#efedec",
+                        "primary-container": "#e2165f",
+                        "on-secondary-container": "#69007a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#c9a900",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1b1c1b",
+                        "inverse-on-surface": "#f2f0ee",
+                        "surface": "#fbf9f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Montserrat"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Montserrat"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(253, 251, 249, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--tw-colors-primary-container) 0%, var(--tw-colors-peach-warmth) 100%);
+        }
+        .promo-gradient {
+            background: linear-gradient(135deg, var(--tw-colors-tertiary-container) 0%, var(--tw-colors-primary-container) 100%);
+        }
+        .final-cta-gradient {
+            background: linear-gradient(135deg, var(--tw-colors-primary-container) 0%, var(--tw-colors-secondary-container) 50%, var(--tw-colors-tertiary-container) 100%);
+        }
+        .service-card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(154, 37, 174, 0.15);
+        }
+        .service-card:hover {
+            transform: scale(1.02) translateY(-4px);
+            box-shadow: 0 20px 35px -5px rgba(154, 37, 174, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation -->
+<nav class="glass-nav fixed top-0 w-full z-50 shadow-sm border-b border-surface-variant/30">
+<div class="max-w-container-max mx-auto px-gutter py-4 flex justify-between items-center">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">Bangs Glow Salon</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-label-bold text-label-bold text-tertiary-container border-b-2 border-tertiary-container pb-1 transition-all" href="#inicio">Inicio</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#servicios">Servicios</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#galeria">Galería</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#nosotras">Nosotras</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#resenas">Reseñas</a>
+<a class="font-label-bold text-label-bold text-on-surface hover:text-primary transition-colors duration-300" href="#contacto">Contacto</a>
+</div>
+<a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-primary text-on-primary rounded-full font-label-bold text-label-bold hover:bg-primary-container transition-all hover:scale-105 shadow-md" href="#contacto">
+                Agenda por WhatsApp
+            </a>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-primary focus:outline-none">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- 1. HERO -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden" id="inicio">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-60 mix-blend-multiply hero-gradient" data-alt="A stunning, high-fashion portrait of a confident, glamorous woman with flawless, glossy hair and subtle, radiant makeup. The lighting is soft and premium, highlighting her features against a vibrant fuchsia to peach gradient background. The overall aesthetic is upscale, empowering, and highly polished, reflecting a modern, luxury beauty salon experience." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3sR18FfLgYoOIt4H0dFLVEPtLRBDLsScn3VZ9X-k-moROFCjoKM_w1uXGEcR0lNJlMa6veQs4quqYAH8FV5S2w9Cu4uPMxkiLhKsPRLPsjkwUklPHf_KySYLPn0ronaULNAaRstLROzxEwDdffTZX3ZowU-19zjGWWOZgQVHQqLphGdT33ytinPstOszWwYkulm0Nrfp3iUDxdbWa068Mml_tRSQwuSbBfD-VdQpNdk1Y9IYYteyKcXHftXn0jfGhdBmhwkUfWPo')"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="md:w-1/2 text-center md:text-left fade-in-section">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-primary-container mb-6 drop-shadow-lg">
+                        Brilla. Luce.<br/>Bangs Glow.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-primary-container/90 mb-8 max-w-lg mx-auto md:mx-0 drop-shadow-md">
+                        El salón de belleza favorito de Nicolás Romero para sentirte increíble.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded-full font-label-bold text-label-bold hover:bg-secondary transition-all duration-300 hover:scale-105 shadow-lg whitespace-nowrap" href="#">
+                            Agenda tu cita por WhatsApp 💕
+                        </a>
+</div>
+<div class="mt-8 flex items-center justify-center md:justify-start gap-2 text-on-primary-container/90 bg-black/20 backdrop-blur-sm p-3 rounded-xl inline-flex">
+<span class="text-tertiary-fixed text-xl">⭐</span>
+<span class="font-label-sm text-label-sm">4.9/5 en Google · +500 clientas felices</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. TRUST BAR -->
+<section class="bg-tertiary-container py-8 relative z-20 shadow-md">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+<div class="flex flex-col items-center justify-center space-y-2 fade-in-section">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label-bold text-label-sm text-on-tertiary-container uppercase">Productos profesionales</span>
+</div>
+<div class="flex flex-col items-center justify-center space-y-2 fade-in-section" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-bold text-label-sm text-on-tertiary-container uppercase">Equipo certificado</span>
+</div>
+<div class="flex flex-col items-center justify-center space-y-2 fade-in-section" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" style="font-variation-settings: 'FILL' 1;">sanitizer</span>
+<span class="font-label-bold text-label-sm text-on-tertiary-container uppercase">Ambiente higiénico</span>
+</div>
+<div class="flex flex-col items-center justify-center space-y-2 fade-in-section" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-on-tertiary-container text-4xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-bold text-label-sm text-on-tertiary-container uppercase">Atención personalizada</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SERVICES -->
+<section class="py-24 bg-cream-surface" id="servicios">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16 fade-in-section">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">Todo lo que necesitas para brillar</h2>
+<div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="service-card bg-surface-container-lowest rounded-2xl overflow-hidden border-t-4 border-primary transition-all duration-300 fade-in-section service-card-shadow flex flex-col h-full">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a stylist performing a precision haircut on a client. The focus is on the shiny, healthy hair and the professional tools. The lighting is bright and clean, set in a modern, upscale salon environment with subtle fuchsia and cream accents in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiqRVn9r_AZS86snsZ_oMyPjZqjrnrtOJbb3aTaUNErNEFfbIUAAaNPRCwkOkGTYFnnoSIKihQ5E3uTCsZLAKt_o3N73Cqf2dOFBXksD7Dj0R2oYrIf66tGAidIbC3dTbm6ujEPa4LHxKz0jWLpK2jx0ikp8ZOviap8t3M_BA30BhTosLLcoDi9ci1wSGKChvs_H7sGQH_yIkZ0IPePr9VWOuWdvrnzOVv5zBJ9Caevat8mAm93jG6pft7fJFN3ffZj4gn9jBZa8M"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm text-on-primary px-3 py-1 rounded-full font-label-bold text-label-sm">
+                                Diseño Capilar
+                            </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2">Cortes &amp; Styling</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Diseños personalizados que resaltan tus facciones y estilo de vida.</p>
+</div>
+<div class="mt-auto">
+<div class="text-primary font-label-bold text-lg mb-4">Desde $450</div>
+<a class="block w-full text-center px-4 py-3 border-2 border-primary text-primary rounded-full font-label-bold text-label-sm uppercase hover:bg-primary hover:text-on-primary transition-colors" href="#">Reservar este servicio</a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="service-card bg-surface-container-lowest rounded-2xl overflow-hidden border-t-4 border-secondary transition-all duration-300 fade-in-section service-card-shadow flex flex-col h-full" style="transition-delay: 100ms;">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A vibrant, close-up photograph showcasing a stunning balayage hair color transformation. The hair features seamless blending from dark roots to bright, dimensional blonde ends. The lighting highlights the glossy texture and rich colors, set in a glamorous salon setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy2mYZZu6pDah1tuVaaed_9ZUcYnufKH19dBLUQLr758mZszAbZ6i4wsWUp95JlZ_wTJUEpA3481p1DtitwO98I45wwVoV50exF3Rd4_FjHlgdqfcJqGPn_rW7xCiA3z64EkyIYndk2Y61HIURojuPFBz6GNDDZYFboZDBzvj9cghf2aMptEbO5M8Bs_Eaee3kpcwMdy5669QIPnrE60lLcgRLRktj7Sk9peRcAtGFkIoFKw85NqGqyMVoOgsdiXV6OhxzbOkydxE"/>
+<div class="absolute top-4 right-4 bg-secondary/80 backdrop-blur-sm text-on-secondary px-3 py-1 rounded-full font-label-bold text-label-sm">
+                                Hair Color
+                            </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2">Coloración Premium</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Balayage, babylights y tintes con productos de la más alta calidad.</p>
+</div>
+<div class="mt-auto">
+<div class="text-secondary font-label-bold text-lg mb-4">Previa valoración</div>
+<a class="block w-full text-center px-4 py-3 border-2 border-secondary text-secondary rounded-full font-label-bold text-label-sm uppercase hover:bg-secondary hover:text-on-secondary transition-colors" href="#">Reservar este servicio</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="service-card bg-surface-container-lowest rounded-2xl overflow-hidden border-t-4 border-peach-warmth transition-all duration-300 fade-in-section service-card-shadow flex flex-col h-full" style="transition-delay: 200ms;">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A detailed, macro shot of perfectly manicured nails featuring a sophisticated, modern nail art design with soft peach and metallic gold accents. The hands are resting gently, illuminated by soft, flattering light that emphasizes the high-gloss finish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPurGCZ4qnTcPjlhMsXmpVR6sqyAcuEMS39hLV0areIxMzha8bq9Xrl1B5BjXScI6rWXOLmBkxw1SRFvzXg3e8kftSImP3Bc1UfLI13mRGZKsA8HxR7SB6XmE0qF_Vx_m1v2GB5O972mp91dNi6tedE1ZkZ9X6MkNQL-Apq36b1qXmdL_vaL5pWfQpCaj8axRXJUOSwEFDoDUbkMc2H2tkbj2bVbUdn-gjjmdN5k3P1TnS09d4oCzR7ZYKSvKa0l9cw9nlztt_LeQ"/>
+<div class="absolute top-4 right-4 bg-peach-warmth/90 backdrop-blur-sm text-on-background px-3 py-1 rounded-full font-label-bold text-label-sm">
+                                Uñas
+                            </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-2xl text-on-surface mb-2">Nail Bar</h3>
+<p class="font-body-md text-on-surface-variant mb-4">Acrílico, gel, spa de manos y pies con diseños exclusivos.</p>
+</div>
+<div class="mt-auto">
+<div class="text-on-background font-label-bold text-lg mb-4">Desde $300</div>
+<a class="block w-full text-center px-4 py-3 border-2 border-outline text-on-surface rounded-full font-label-bold text-label-sm uppercase hover:bg-surface-variant transition-colors" href="#">Reservar este servicio</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. GALLERY -->
+<section class="py-24 bg-deep-onyx relative overflow-hidden" id="galeria">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<!-- Decorative abstract shapes -->
+<svg height="100%" preserveaspectratio="none" viewbox="0 0 100 100" width="100%">
+<path d="M0,0 Q50,100 100,0 V100 H0 Z" fill="var(--tw-colors-primary)"></path>
+</svg>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="text-center mb-16 fade-in-section">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-tertiary-fixed mb-4">Resultados que hablan por sí solos</h2>
+<p class="font-body-lg text-surface-variant max-w-2xl mx-auto">Transformaciones reales en Bangs Glow Salon.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square rounded-xl overflow-hidden fade-in-section">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" data-alt="A split image showing a dramatic 'before and after' hair transformation. The left side shows dull, frizzy hair, and the right side shows vibrant, sleek, and perfectly styled glossy fuchsia-toned hair. Professional salon lighting highlights the stunning difference." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVh8t4WEwvvzlA-BW9ARGdZpmbWLWOh8HN3MkHTMh4fpwF66DbGnkU8r6qUT0GJr351er1G-wyFwRvlk31fAwq3tWI3HT009ENCNVlviFUPfIDB_ROodbzkGf2aBMNRogUvlcydeoVnw9Ayy5y60hQZTtt34i08fm0sjlH3r7m3J_UXThfRoUx9fGGtze9rLEjQfdQaAOvklTMA2N-7C7tW85HPGEHnz5qb7QaYS3aBj6J-NTtw31R4gpXl57m_E26T8Lj_U47MqI"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden fade-in-section" style="transition-delay: 100ms;">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" data-alt="A glamorous portrait of a client with newly styled, voluminous curls and flawless makeup, smiling confidently. The background is a chic salon setting with soft, warm lighting and subtle gold accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGFnPbCVWQTNnxc1ZIqSOitYypW0joubGHEuzL0BJ7hlb6C1twuhj-TQnlbjIDopGJeSmc2SKZhI3ReHqLxq4ACm3RAS4uT9k1ZhBgtOFyKlnOv4OafAsvFn7xK1QAIrAHBASOpQJx7P1B1Xu-D-7qhXjAoIWbEN-DmwPMh7MjO_05YxotLdt1j73X_regP1VNvfQhUEmnfB44t0rrEl5Vdn1EkpFhICq1u2x19uu2UqD3jzjwjCtPExC56w6CfJreXtGEX_R78Q"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden md:col-span-2 md:row-span-2 fade-in-section" style="transition-delay: 200ms;">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" data-alt="A wide shot of the upscale Bangs Glow Salon interior. The space features modern styling stations with large, illuminated mirrors, sleek black chairs, and elegant decor with fuchsia and peach floral arrangements. The ambiance is vibrant, luxurious, and welcoming." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSagODVnWKRF2FBb0VqpBNMBwlKkdbE6WfX4PR0d_esshHXaVU6ziCWK0JweXdgxCgetID2yj8ijAifFj7Tj_4C_KZe_CpfJq0WNfvmOthilT24cv1EMMbVXrpt2p3VgLQa-ymhHsjvogaliLzBysViD8z5c8LuXHbfTTVeX2I9e4x63nO1fCH0slK8AylS3hD8KlhpX0o0103APHBx9w7V858bWd_UwdcvPL2ENMAaka3o7iLo1mwCTq8n6Q9VloD9gz_hSQ_LKY"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden fade-in-section" style="transition-delay: 300ms;">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" data-alt="A close-up of a beautifully executed lash extension and perfectly shaped eyebrows on a client. The focus is sharp on the eyes, demonstrating high-quality, precise aesthetic work. Soft, diffused lighting emphasizes the flawless skin." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRVcbuUSNphkE8-UU6spXNhRcQE-R9JTuKbaQzAGkyPtWvkjXL9ePSr3D7aybzab0Y0I3hkIhu5hxHHIyUyZBwmhK7fXnN7oD_SA9aoDKhWtvC3pMX1bqVVmwDFoYOKHEaePS3fBLMtlqn2aAYIYw8qEzaSmqOgJrT_V4IrQ9-LyirhXSx-XIgcoSEGst5G4eKYZ-NKaH5LKihFzdjTPucnV1YuRPPFlA24EZ_d7ekGiFKIkGPZ1Mcq37qxbQX-g7M2ejvzG_wEk0"/>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden fade-in-section" style="transition-delay: 400ms;">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" data-alt="A close-up shot of a stylist's hands gently applying a premium hair mask product to a client's hair at the wash basin. The scene evokes a relaxing, spa-like atmosphere with soft lighting and a sense of luxury care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAREVfK_Vz7BdX58lf-Ucp5bNUs2kWY0IC430qkU7ZJ2pf4eLT0T3A27gqHXroHb_fbj_pCcAZw8vCf3TpM-x_R5pA5oiVE4TcmUEa7ayAY_rkLGflMGxYbs7lQaWWfirFMZeoPjOxZrpCc_XEh_u1x-iTxXroRd2yQ9dU1pb5CgG0chN0iJif2uYV7MEMz2F5M74k-2m9x0vmHlgjfVOyDEP0glndTsPfJFH7rhb_gZpGB8ICgqCtIf58NHgc8ZXp4-blvXm9rXTc"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. ABOUT US -->
+<section class="py-24 bg-gradient-to-b from-surface-container-lowest to-primary-fixed/20" id="nosotras">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2 fade-in-section">
+<img class="rounded-2xl shadow-xl w-full object-cover h-[500px]" data-alt="A candid, warm photograph of the salon owner and lead stylist smiling brightly in the middle of the salon. She is dressed stylishly and exudes confidence and friendliness. The background shows the bustling, high-end environment of Bangs Glow Salon with its signature vibrant color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuN-xy3D61XPRR8QnQNg54UAmQz_Ha4XUBrf3yfgVrZiErNJFtZKYwrMrLmvN7cv5eEPdonrgVf0F9VPLZtisNR22Am-XHOq0KUHwqScQFEDk73fY3CB9wfbJnv1i_NlgLXTzhAmMZeIPx03h2fMlnq7M20j6Nj5TGhv0DCoGxw6m_YaiN1ihgRBMn36RWWxu4OoINxVaQCmvcqCbaMFgPK48yNBJbhhqOk0qH9uhldzbRYFMyTRC-g2PIWT0IzV6D6F-Hpy3UiCo"/>
+</div>
+<div class="md:w-1/2 fade-in-section">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-6">Por qué las chicas eligen Bangs Glow</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                            No somos solo un salón, somos un espacio diseñado para empoderarte. Creemos que la belleza es una forma de expresión y mereces un momento solo para ti, rodeada de expertas que entienden lo que buscas.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-primary-container p-3 rounded-full shrink-0">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div>
+<h4 class="font-label-bold text-lg text-on-surface">Calidad Premium</h4>
+<p class="font-body-md text-on-surface-variant">Solo utilizamos marcas de prestigio internacional para cuidar tu cabello y piel.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-secondary-container p-3 rounded-full shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">psychiatry</span>
+</div>
+<div>
+<h4 class="font-label-bold text-lg text-on-surface">Expertise Actualizado</h4>
+<p class="font-body-md text-on-surface-variant">Nuestro equipo se capacita constantemente en las últimas tendencias y técnicas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. PROMO -->
+<section class="py-16 promo-gradient relative overflow-hidden shadow-inner">
+<div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay" style="background-image: radial-gradient(circle at center, white 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="max-w-container-max mx-auto px-gutter text-center relative z-10 fade-in-section">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary-container mb-4">¿Primera vez con nosotras? 🎁</h2>
+<p class="font-display-lg text-4xl md:text-5xl text-tertiary-fixed mb-8">Recibe un 15% de descuento</p>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-bold text-label-bold hover:bg-white transition-all duration-300 hover:scale-105 shadow-lg" href="#">
+                    Quiero mi descuento por WhatsApp
+                </a>
+</div>
+</section>
+<!-- 10. FINAL CTA -->
+<section class="relative min-h-[716px] flex items-center justify-center py-24 overflow-hidden final-cta-gradient">
+<div class="relative z-10 max-w-3xl mx-auto px-gutter text-center fade-in-section">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-primary-container mb-6 drop-shadow-lg">
+                    Mereces sentirte hermosa.
+                </h2>
+<p class="font-headline-md text-2xl md:text-3xl text-on-primary-container/90 mb-10 drop-shadow-md">
+                    Hoy es un buen día para empezar.
+                </p>
+<a class="inline-flex items-center justify-center px-10 py-5 bg-white text-primary rounded-full font-label-bold text-lg hover:bg-surface-container-lowest transition-all duration-300 hover:scale-110 shadow-2xl" href="#">
+                    Agenda tu cita por WhatsApp 💕
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-onyx text-surface-variant py-16 px-gutter border-t border-inverse-surface" id="contacto">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-secondary-fixed mb-4">Bangs Glow</div>
+<p class="font-body-md text-sm mb-6">El salón de belleza favorito de Nicolás Romero. Expertas en hacerte brillar.</p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full bg-inverse-surface flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-inverse-surface flex items-center justify-center hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-white">thumb_up</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-white mb-4 uppercase">Horarios</h4>
+<ul class="space-y-2 font-body-sm text-sm">
+<li>Lunes - Viernes: 10:00 - 20:00</li>
+<li>Sábado: 09:00 - 18:00</li>
+<li>Domingo: Cerrado</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-white mb-4 uppercase">Contacto</h4>
+<ul class="space-y-3 font-body-sm text-sm">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">location_on</span>
+<span>Villa Nicolás Romero, Estado de México</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">phone</span>
+<span>+52 55 1234 5678</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-white mb-4 uppercase">Enlaces</h4>
+<ul class="space-y-2 font-body-sm text-sm">
+<li><a class="hover:text-tertiary transition-colors" href="#">Términos y Condiciones</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Política de Privacidad</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto mt-12 pt-8 border-t border-inverse-surface text-center font-body-sm text-xs text-surface-dim">
+            © 2024 Bangs Glow Salon. Todos los derechos reservados.
+        </div>
+</footer>
+<!-- Persistent Floating WhatsApp Button -->
+<a class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_15px_35px_rgba(37,211,102,0.6)] transition-all duration-300" href="#">
+<!-- SVG for WhatsApp icon as standard Material symbols doesn't have it -->
+<svg fill="currentColor" height="32" viewbox="0 0 16 16" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+</svg>
+</a>
+<script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach((section) => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>
